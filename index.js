@@ -125,6 +125,21 @@ console.log("Average Change: " + avrgChange);
 //The greatest increase in Profit/Losses (date and amount) over the entire period.
 
 
+var increase = [0];
+for (let j = 0; j < finances.length -1 ; j++) {
+  increase[j] = finances[j+1][1] - finances[j][1];
+}
+
+var grtstIncrease = Math.max(...increase);
+
+var monthOfIncrease = finances[increase.indexOf(grtstIncrease) + 1][0];
+
+console.log("Greatest Increase: " + monthOfIncrease + "(" + grtstIncrease +")");
 
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
+var grtstDecrease = Math.min(...increase);
+
+var monthOfDecrease = finances[increase.indexOf(grtstDecrease) + 1][0];
+
+console.log("Greatest Decrease: " + monthOfDecrease + "(" + grtstDecrease + ")");
