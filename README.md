@@ -24,4 +24,4 @@ The script performs the following calculations:
 
 ## Deployed Application
 
-You can access the live application at the following URL: [Coding Quiz Challenge Live](claudiabiplus.github.io/coding-quiz/)
+You can access the live application at the following URL: [Coding Quiz Challenge Live](claudiabiplus.github.io/Console-Finances/)
