@@ -106,9 +106,25 @@ for (let i = 0; i < finances.length; i++) {
 console.log("Total: $" + netTotal);
 
 // The average of the changes in Profit/Losses over the entire period.
-/* You will need to track what the total change in Profit/Losses are from month to month and then find the average. (Total/(Number of months - 1))
- The greatest increase in Profit/Losses (date and amount) over the entire period. */
+// You will need to track what the total change in Profit/Losses are from month to month and then find the average. (Total/(Number of months - 1))
+
+var avrgChange = 0;
+var monthChange = 0;
+
+for (let y = 0; y < finances.length -1 ; y++) {
+  monthChange += finances[y+1][1] - finances[y][1];
+}
+
+avrgChange += monthChange/(finances.length - 1);
+
+avrgChange = Math.round(avrgChange * 100) / 100;
+
+
+console.log("Average Change: " + avrgChange);
+
+//The greatest increase in Profit/Losses (date and amount) over the entire period.
 
 
 
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
