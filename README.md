@@ -7,7 +7,7 @@ This project analyzes financial data to calculate key metrics such as total numb
 
 ## Screenshot
 
-![Console Finances Screenshot](/Console-Finances/screenshots/results.png)
+![Console Finances Screenshot](/assets/screenshots/results.png)
 
 
 *Above is a preview of the Finance Analysis*
@@ -24,4 +24,4 @@ The script performs the following calculations:
 
 ## Deployed Application
 
-You can access the live application at the following URL: [Coding Quiz Challenge Live](claudiabiplus.github.io/Console-Finances/)
+You can access the live application at the following URL: [Console Finances](claudiabiplus.github.io/Console-Finances/)
