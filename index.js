@@ -124,22 +124,32 @@ console.log("Average Change: " + avrgChange);
 
 //The greatest increase in Profit/Losses (date and amount) over the entire period.
 
+var grtstIncrease = 0;
+var monthOfIncrease = 0;
 
-var increase = [0];
-for (let j = 0; j < finances.length -1 ; j++) {
-  increase[j] = finances[j+1][1] - finances[j][1];
+for (let j = 0; j < finances.length - 1; j++) {
+  var change = 0;
+  change = finances[j+1][1] - finances[j][1];
+  if (change > grtstIncrease) {
+    grtstIncrease = change
+    monthOfIncrease = j;
+  }
 }
 
-var grtstIncrease = Math.max(...increase);
-
-var monthOfIncrease = finances[increase.indexOf(grtstIncrease) + 1][0];
-
-console.log("Greatest Increase: " + monthOfIncrease + "(" + grtstIncrease +")");
+console.log("Greatest Increase: " + finances[monthOfIncrease + 1][0] + "(" + grtstIncrease +")");
 
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
-var grtstDecrease = Math.min(...increase);
+var grtstDecrease = 0;
+var monthOfDecrease = 0;
 
-var monthOfDecrease = finances[increase.indexOf(grtstDecrease) + 1][0];
+for (let j = 0; j < finances.length - 1; j++) {
+  var change = 0;
+  change = finances[j+1][1] - finances[j][1];
+  if (change < grtstDecrease) {
+    grtstDecrease = change
+    monthOfDecrease = j;
+  }
+}
 
-console.log("Greatest Decrease: " + monthOfDecrease + "(" + grtstDecrease + ")");
+console.log("Greatest Decrease: " + finances[monthOfDecrease + 1][0] + "(" + grtstDecrease + ")");
